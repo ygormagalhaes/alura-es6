@@ -11,10 +11,8 @@ class NegociacaoController {
     adiciona(event) {
         event.preventDefault();
 
-        let dataHelper = new DateHelper();
-
         let negociacao = new Negociacao(
-            dataHelper.textoParaData(this._inputData.value),
+            DateHelper.textoParaData(this._inputData.value),
             this._inputQuantidade.value,
             this._inputValor.value
         );
@@ -23,7 +21,7 @@ class NegociacaoController {
 
         console.log(negociacao);
 
-        console.log(dataHelper.dataParaTexto(negociacao.data))
+        console.log(DateHelper.dataParaTexto(negociacao.data))
     }
 
     limpaFormulario() {
